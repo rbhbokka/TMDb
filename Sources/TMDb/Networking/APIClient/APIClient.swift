@@ -1,6 +1,6 @@
 import Foundation
 
-protocol APIClient {
+public protocol APIClient {
 
     func get<Response: Decodable>(path: URL) async throws -> Response
 
