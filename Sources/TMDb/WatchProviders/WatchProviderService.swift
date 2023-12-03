@@ -18,6 +18,10 @@ public final class WatchProviderService {
             localeProvider: TMDbFactory.localeProvider
         )
     }
+    
+    public convenience init(localeProvider: @escaping () -> Locale) {
+        self.init(apiClient: TMDbFactory.apiClient, localeProvider: localeProvider)
+    }
 
     init(apiClient: APIClient, localeProvider: @escaping () -> Locale) {
         self.apiClient = apiClient
